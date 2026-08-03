@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alemão Doces | Chocolates, Balas e Doces em Londrina - Entrega Rápida</title>
+  <meta name="description" content="Alemão Doces: Chocolates, balas, chicletes, aperitivos e doces de pote em Londrina. Mais de 500 produtos, entrega rápida e atendimento personalizado.">
+  <meta name="keywords" content="doces londrina, chocolates londrina, balas londrina, chicletes, aperitivos, doces de pote, brinquedos">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-content">
+      <span>📦 Entregas em Londrina!</span>
+      <span>Siga nosso Instagram 📱 @_alemaodoces</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-flex">
+	<div class="logo">
+	  <!-- Troquei o span de emoji pela sua imagem -->
+	  <img src="assets/logo.JPG" alt="Alemão Doces" class="logo-img">
+	  <div>
+		<div class="logo-text">Alemão</div>
+		<div class="logo-subtext">DOCES</div>
+	  </div>
+	</div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav class="nav-menu" id="navMenu">
+      <a href="#home">INÍCIO</a>
+      <a href="#produtos">PRODUTOS</a>
+      <a href="#sobre">SOBRE NÓS</a>
+      <a href="#marcas">MARCAS</a>
+      <a href="#promocoes">PROMOÇÕES</a>
+      <a href="#contato">CONTATO</a>
+      <a href="#" class="cart-link" onclick="abrirCarrinho(); return false;">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+      </a>
+    </nav>
+    <button class="btn btn-whatsapp" onclick="window.open('https://wa.me/5543996107209', '_blank')">
+      <span>💬</span> Fale Conosco
+    </button>
+  </div>
+</header>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<div id="mainContent">
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1 id="heroTitulo">OS MELHORES DOCES PARA SUA LOJA OU PARA MATAR AQUELA VONTADE!</h1>
+        <p id="heroDescricao">A Alemão Doces oferece uma enorme variedade de chocolates, balas, chicletes, aperitivos, doces de pote, brinquedos e muito mais. Atendimento rápido, produtos de qualidade e entregas em Londrina.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="showPage('pageProdutos')">VER PRODUTOS 🛍️</button>
+          <button class="btn btn-secondary" onclick="window.open('https://wa.me/5543996107209', '_blank')">💬 FALE CONOSCO</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=600&h=400&fit=crop" alt="Variedade de doces e chocolates da Alemão Doces">
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section id="categorias" class="categorias">
+    <div class="container">
+      <h2 class="section-title">NOSSAS <span class="highlight">CATEGORIAS</span></h2>
+      <div class="categorias-grid" id="categoriasGrid"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE NÓS / DIFERENCIAIS -->
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <h2 class="section-title">POR QUE ESCOLHER A <span class="highlight">ALEMÃO DOCES?</span></h2>
+      <p class="sobre-descricao" id="sobreDescricao">Trabalhamos para oferecer sempre o melhor para nossos clientes, com produtos de qualidade e atendimento personalizado. A qualidade é um atendimento que faz a diferença.</p>
+      <div class="diferenciais-grid" id="diferenciaisGrid"></div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS EM DESTAQUE -->
+  <section id="produtos" class="produtos-destaque">
+    <div class="container">
+      <h2 class="section-title">PRODUTOS EM <span class="highlight">DESTAQUE</span></h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="carouselPrev()">❮</button>
+        <div class="produtos-carousel" id="produtosCarousel"></div>
+        <button class="carousel-btn next" onclick="carouselNext()">❯</button>
+      </div>
+      <div style="text-align:center;margin-top:30px;">
+        <button class="btn btn-secondary" onclick="showPage('pageProdutos')">VER TODOS OS PRODUTOS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARCAS -->
+  <section id="marcas" class="marcas">
+    <div class="container">
+      <h2 class="section-title">MARCAS QUE TRABALHAMOS</h2>
+      <div class="marcas-grid">
+        <span>Nestlé</span>
+        <span>Lacta</span>
+        <span>Garoto</span>
+        <span>Arcor</span>
+        <span>Fini</span>
+        <span>Haribo</span>
+        <span>Trento</span>
+        <span>Talento</span>
+        <span>Kinder</span>
+        <span>Ferrero</span>
+        <span>Halls</span>
+        <span>Mentos</span>
+        <span style="grid-column: 1/-1; text-align: center; color: #DB355E; font-weight: 700;">❯ e muitas outras</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- PÁGINA: TODOS OS PRODUTOS -->
+<div id="pageProdutos" class="page-produtos">
+  <div class="container">
+    <div class="page-header">
+      <button class="btn btn-back" onclick="showPage('home')">← Voltar</button>
+      <h2>TODOS OS PRODUTOS</h2>
+    </div>
+
+    <!-- ADICIONE ESTE BLOCO ABAIXO -->
+    <div class="search-wrapper">
+      <div class="search-box">
+        <span class="icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Pesquisar por nome ou código..." onkeyup="filtrarTudo()">
+      </div>
+    </div>
+    <!-- FIM DO BLOCO DE PESQUISA -->
+
+    <div class="produtos-filtros" id="filtrosContainer"></div>
+    <div class="produtos-todos-grid" id="produtosTodosGrid"></div>
+  </div>
+</div>
+
+<!-- PÁGINA: DETALHE DO PRODUTO -->
+<div id="pageProdutoDetalhe" class="page-produto-detalhe">
+  <div class="container">
+    <button class="btn btn-back" onclick="showPage('pageProdutos')">← Voltar</button>
+    <div class="produto-detalhe-container" id="produtoDetalheContent"></div>
+  </div>
+</div>
+
+<!-- PÁGINA: CARRINHO -->
+<div id="pageCarrinho" class="page-carrinho">
+  <div class="container">
+    <h2 class="page-title">MEU CARRINHO</h2>
+    <button class="btn btn-back" onclick="showPage('pageProdutos')">← Continuar Comprando</button>
+    <div id="carrinhoItems"></div>
+    <div class="carrinho-botoes" id="carrinhoBotoes" style="display:none;gap:12px;justify-content:center;margin-top:30px;">
+      <button class="btn btn-primary" onclick="showPage('pageProdutos')">Adicionar Mais</button>
+      <button class="btn btn-secondary" onclick="abrirEndereco()">Concluir Pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- PÁGINA: ENDEREÇO -->
+<div id="pageEndereco" class="page-endereco">
+  <div class="container">
+    <div class="endereco-container">
+      <h2>ENDEREÇO DE ENTREGA</h2>
+      <div class="resumo-carrinho" id="resumoCarrinho"></div>
+      <form class="endereco-form" onsubmit="event.preventDefault(); enviarWhatsApp();">
+        <div class="form-group">
+          <label>Endereço *</label>
+          <input type="text" id="enderecoInput" placeholder="Rua, número, complemento" required>
+        </div>
+        <div class="form-group">
+          <label>Bairro</label>
+          <input type="text" id="bairroInput" placeholder="Seu bairro">
+        </div>
+        <div class="form-group">
+          <label>Cidade *</label>
+          <input type="text" id="cidadeInput" value="Londrina - PR" required>
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
+          <button class="btn btn-back" onclick="showPage('pageCarrinho')">Voltar</button>
+          <button class="btn btn-secondary" type="submit">💬 Enviar pelo WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-section">
+      <h4>SOBRE NÓS</h4>
+      <p>A Alemão Doces oferece variedade, qualidade e praticidade para quem procura doces e guloseimas. Atendemos desde pequenos comerciantes até consumidores finais.</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/_alemaodoces" target="_blank">📱</a>
+        <a href="https://wa.me/5543996107209" target="_blank">💬</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h4>LINKS RÁPIDOS</h4>
+      <a href="#home">Início</a>
+      <a href="#" onclick="showPage('pageProdutos'); return false;">Produtos</a>
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#promocoes">Promoções</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <div class="footer-section">
+      <h4>CONTATO</h4>
+      <p>📱 (43) 99610-7209</p>
+      <p>📍 Rua João Schiavinatto, 137</p>
+      <p>Londrina - PR</p>
+      <p>CEP: 86030-560</p>
+      <p>📅 Seg-Sex: 08h às 12h</p>
+      <p>📅 Sábado: 08h às 12h</p>
+    </div>
+    <div class="footer-section">
+      <h4>ENDEREÇO</h4>
+      <div class="mapa-placeholder">
+        <p>📍 Rua João Schiavinatto, 137</p>
+        <p>Londrina - PR</p>
+        <p>CNPJ: 27.162.485/0001-76</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Alemão Doces. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5543996107209" target="_blank" class="whatsapp-float">💬 Fale conosco</a>
+
+<!-- SCRIPTS -->
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
